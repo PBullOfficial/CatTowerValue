@@ -9,9 +9,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        Menu();
 
 
 
+    }
+
+    // Handles menu
+    public static void Menu() {
         int choice, choice2, choice3, choice4, choice5, choice6;
         Scanner scan = new Scanner(System.in);
         boolean ext = true, ext2 = true, ext3 = true;
@@ -146,3 +151,6 @@ public class Main {
         } while (choice != 3 && ext);
     }
 }
+
+
+
