@@ -9,6 +9,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        // Try using arrayList to manage data storage in shape objects -> calculate total area from this
+
         Menu();
 
 
