@@ -9,16 +9,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        // Try using arrayList to manage data storage in shape objects -> calculate total area from this
+        double totalArea = 0; // Global variable to hold total area computed
 
-        Menu();
-
-
-
-    }
-
-    // Handles menu
-    public static void Menu() {
         int choice, choice2, choice3, choice4, choice5, choice6;
         Scanner scan = new Scanner(System.in);
         boolean ext = true, ext2 = true, ext3 = true;
@@ -37,7 +29,7 @@ public class Main {
                         System.out.println("Shape Options: ");
                         System.out.println("(1) Cuboid");
                         System.out.println("(2) Cylinder");
-                        //System.out.println("(3) Flat Rectangle");
+                        System.out.println("(3) Flat Rectangle");
                         //System.out.println("(4) Flat Ellipse");
                         //System.out.println("(5) Hammock");
                         System.out.println("(6) Compute!");
@@ -54,7 +46,9 @@ public class Main {
                                 cube.setWidth(scan2.nextDouble());
                                 System.out.println("Enter height: ");
                                 cube.setHeight(scan2.nextDouble());
-                                System.out.println("The area of this cuboid is: " + cube.getCuboidArea());
+                                System.out.println("The area of this cuboid is: " + cube.getArea());
+                                totalArea += cube.getArea();
+                                System.out.println("The total area so far is: " + totalArea);
                                 Scanner scan3 = new Scanner(System.in);
                                 do {
                                     System.out.println("Another shape?");
@@ -69,7 +63,7 @@ public class Main {
                                             break;
                                         case 2:
                                             //Send to results screen
-                                            System.out.println("Total area of the cat tower is: ");
+                                            System.out.println("Total area of the cat tower is: " + totalArea);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -86,9 +80,11 @@ public class Main {
                                 cyl.setHeight(scan2.nextDouble());
                                 System.out.println("Enter radius: ");
                                 cyl.setRadius(scan2.nextDouble());
-                                System.out.println("The surface area provided by this cylinder is: " + cyl.getCylinderArea());
+                                System.out.println("The surface area provided by this cylinder is: " + cyl.getArea());
                                 System.out.println("**Note -- Cylinders take away surface area where they are placed,");
                                 System.out.println("therefore, the total contributed area may be negative.");
+                                totalArea += cyl.getArea();
+                                System.out.println("The total area so far is: " + totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
                                     ext3 = true;
@@ -104,7 +100,7 @@ public class Main {
                                             break;
                                         case 2:
                                             //Send to results screen
-                                            System.out.println("Total area of the cat tower is: ");
+                                            System.out.println("Total area of the cat tower is: " + totalArea);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -115,9 +111,39 @@ public class Main {
                                 } while (choice3 != 1 && ext3);
                                 break;
                             case 3:
-                                // Make new
-                                // ...
-                                // etc.
+                                // Flat Rectangle submenu
+                                FlatRectangle flat = new FlatRectangle();
+                                System.out.println("Enter length: ");
+                                flat.setLength(scan2.nextDouble());
+                                System.out.println("Enter width: ");
+                                flat.setWidth(scan2.nextDouble());
+                                System.out.println("The usable surface area provided by this flat rectangle is: " + flat.getArea());
+                                totalArea += flat.getArea();
+                                System.out.println("Total usable area so far is: " + totalArea);
+                                scan3 = new Scanner(System.in);
+                                do {
+                                    ext3 = true;
+                                    System.out.println("Another shape?");
+                                    System.out.println("(1) Yes");
+                                    System.out.println("(2) No - Compute!");
+                                    choice3 = scan3.nextInt();
+                                    switch (choice3) {
+                                        case 1:
+                                            // Returns to previous menu
+                                            choice3 = 1;
+                                            ext3 = false;
+                                            break;
+                                        case 2:
+                                            //Send to results screen
+                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            choice3 = 1;
+                                            ext3 = false;
+                                            ext2 = false;
+                                            break;
+                                        default:
+                                            System.out.println("Invalid Selection");
+                                    }
+                                } while (choice3 != 1 && ext3);
                                 break;
                             case 4:
                                 // Make new
@@ -153,6 +179,9 @@ public class Main {
         } while (choice != 3 && ext);
     }
 }
+
+    // Handles menu
+
 
 
 

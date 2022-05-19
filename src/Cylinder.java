@@ -1,5 +1,5 @@
 // Child class for Cylinders
-// Controls box area calculation
+// Controls cylinder area calculation
 // Post
 public class Cylinder extends Shape{
     double radius;
@@ -20,8 +20,9 @@ public class Cylinder extends Shape{
         it makes the top of the other piece (in the shape
         of the bottom of the cylinder) unusable.
         Reduces demand on user input. */
-    public double getCylinderArea() {
-        return (2 * pi * radius * (height + radius)) - (3 * pi * radius * radius);
+    public double getArea() {
+        area = (2 * pi * radius * (height + radius)) - (3 * pi * radius * radius);
+        return area;
     }
 
     // Setter function for radius
@@ -33,8 +34,6 @@ public class Cylinder extends Shape{
         this.height = theHeight;
     }
 
-    double getArea() {
-        return area;
-    }
+
 
 }
