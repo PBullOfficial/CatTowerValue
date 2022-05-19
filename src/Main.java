@@ -30,8 +30,8 @@ public class Main {
                         System.out.println("(1) Cuboid");
                         System.out.println("(2) Cylinder");
                         System.out.println("(3) Flat Rectangle");
-                        //System.out.println("(4) Flat Ellipse");
-                        //System.out.println("(5) Hammock");
+                        System.out.println("(4) Flat Ellipse");
+                        System.out.println("(5) Hammock");
                         System.out.println("(6) Compute!");
                         //System.out.println("(7) Previous Menu");
                         System.out.println("(8) Exit");
@@ -146,14 +146,72 @@ public class Main {
                                 } while (choice3 != 1 && ext3);
                                 break;
                             case 4:
-                                // Make new
-                                // ...
-                                // etc.
+                                // Flat Ellipse submenu
+                                FlatEllipse flatE = new FlatEllipse();
+                                System.out.println("Enter major axis: ");
+                                flatE.setMajorAxis(scan2.nextDouble());
+                                System.out.println("Enter width: ");
+                                flatE.setMinorAxis(scan2.nextDouble());
+                                System.out.println("The usable surface area provided by this flat ellipse is: " + flatE.getArea());
+                                totalArea += flatE.getArea();
+                                System.out.println("Total usable area so far is: " + totalArea);
+                                scan3 = new Scanner(System.in);
+                                do {
+                                    ext3 = true;
+                                    System.out.println("Another shape?");
+                                    System.out.println("(1) Yes");
+                                    System.out.println("(2) No - Compute!");
+                                    choice3 = scan3.nextInt();
+                                    switch (choice3) {
+                                        case 1:
+                                            // Returns to previous menu
+                                            choice3 = 1;
+                                            ext3 = false;
+                                            break;
+                                        case 2:
+                                            //Send to results screen
+                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            choice3 = 1;
+                                            ext3 = false;
+                                            ext2 = false;
+                                            break;
+                                        default:
+                                            System.out.println("Invalid Selection");
+                                    }
+                                } while (choice3 != 1 && ext3);
                                 break;
                             case 5:
-                                // Make new
-                                // ...
-                                // etc.
+                                // Cylinder submenu
+                                Hammock ham = new Hammock();
+                                System.out.println("Enter radius: ");
+                                ham.setRadius(scan2.nextDouble());
+                                System.out.println("The surface area provided by this hammock is: " + ham.getArea());
+                                totalArea += ham.getArea();
+                                System.out.println("The total area so far is: " + totalArea);
+                                scan3 = new Scanner(System.in);
+                                do {
+                                    ext3 = true;
+                                    System.out.println("Another shape?");
+                                    System.out.println("(1) Yes");
+                                    System.out.println("(2) No - Compute!");
+                                    choice3 = scan3.nextInt();
+                                    switch (choice3) {
+                                        case 1:
+                                            // Returns to previous menu
+                                            choice3 = 1;
+                                            ext3 = false;
+                                            break;
+                                        case 2:
+                                            //Send to results screen
+                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            choice3 = 1;
+                                            ext3 = false;
+                                            ext2 = false;
+                                            break;
+                                        default:
+                                            System.out.println("Invalid Selection");
+                                    }
+                                } while (choice3 != 1 && ext3);
                                 break;
                             case 6:
                                 // Make new

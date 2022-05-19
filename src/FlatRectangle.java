@@ -12,7 +12,7 @@ public class FlatRectangle extends Shape{
         this.width = width;
     }
 
-    // Usable area for platforms
+    // Usable area for rectangular platforms
     double getArea() {
         area = (length * width) / 2;
         return area;
