@@ -30,8 +30,8 @@ public class Main {
                         System.out.println("(3) Flat Rectangle");
                         System.out.println("(4) Flat Ellipse");
                         System.out.println("(5) Hammock");
-                        System.out.println("(6) Compute!");
-                        //System.out.println("(7) Previous Menu");
+                        System.out.println("(6) Trapezoid");
+                        System.out.println("(7) Compute!");
                         System.out.println("(8) Exit");
                         choice2 = scan2.nextInt();
                         switch (choice2) {
@@ -179,7 +179,7 @@ public class Main {
                                 } while (choice3 != 1 && ext3);
                                 break;
                             case 5:
-                                // Cylinder submenu
+                                // Hammock submenu
                                 Hammock ham = new Hammock();
                                 System.out.println("Enter radius: ");
                                 ham.setRadius(scan2.nextDouble());
@@ -212,17 +212,48 @@ public class Main {
                                 } while (choice3 != 1 && ext3);
                                 break;
                             case 6:
+                                Trapezoid trap = new Trapezoid();
+                                System.out.println("Enter height: ");
+                                trap.setHeight(scan2.nextDouble());
+                                System.out.println("Enter base length 1: ");
+                                trap.setBaseLength1(scan2.nextDouble());
+                                System.out.println("Enter base length 2: ");
+                                trap.setBaseLength2(scan2.nextDouble());
+                                System.out.println("The surface area provided by this trapezoid is: " + trap.getArea());
+                                totalArea += trap.getArea();
+                                System.out.println("The total area so far is: " + totalArea);
+                                scan3 = new Scanner(System.in);
+                                do {
+                                    ext3 = true;
+                                    System.out.println("Another shape?");
+                                    System.out.println("(1) Yes");
+                                    System.out.println("(2) No - Compute!");
+                                    choice3 = scan3.nextInt();
+                                    switch (choice3) {
+                                        case 1:
+                                            // Returns to previous menu
+                                            choice3 = 1;
+                                            ext3 = false;
+                                            break;
+                                        case 2:
+                                            //Send to results screen
+                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            choice3 = 1;
+                                            ext3 = false;
+                                            ext2 = false;
+                                            break;
+                                        default:
+                                            System.out.println("Invalid Selection");
+                                    }
+                                } while (choice3 != 1 && ext3);
+                                break;
+                            case 7:
                                 // Results page
                                 System.out.println("What did this cat tower cost?");
                                 price = scan2.nextDouble();
                                 System.out.println("Total area: " + totalArea);
                                 System.out.println("Price: " + price);
                                 System.out.println("Price per square inch is: " + (price/totalArea));
-                                break;
-                            case 7:
-                                // Make new
-                                // ...
-                                // etc.
                                 break;
                             case 8:
                                 System.exit(0);
@@ -238,9 +269,3 @@ public class Main {
         } while (choice != 3 && ext);
     }
 }
-
-    // Handles menu
-
-
-
-
