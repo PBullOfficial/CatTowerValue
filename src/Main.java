@@ -1,8 +1,6 @@
 // This program calculates the usable surface area for cat towers
 // and gives surface area/$
-// Calculate surface area for each shape - ****Need individual functions****
-// Shapes subclasses are cuboid, cylinder, rectangle, ellipse, inverted semi-sphere
-// User options are hut, post, platform (rectangular or elliptical), hammock
+// Shapes subclasses are cuboid, cylinder, flat rectangle, flat ellipse, semi-sphere
 
 import java.util.Scanner;
 
@@ -10,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         double totalArea = 0; // Global variable to hold total area computed
-
+        double price = 0;
         int choice, choice2, choice3, choice4, choice5, choice6;
         Scanner scan = new Scanner(System.in);
         boolean ext = true, ext2 = true, ext3 = true;
@@ -214,9 +212,12 @@ public class Main {
                                 } while (choice3 != 1 && ext3);
                                 break;
                             case 6:
-                                // Make new
-                                // ...
-                                // etc.
+                                // Results page
+                                System.out.println("What did this cat tower cost?");
+                                price = scan2.nextDouble();
+                                System.out.println("Total area: " + totalArea);
+                                System.out.println("Price: " + price);
+                                System.out.println("Price per square inch is: " + (price/totalArea));
                                 break;
                             case 7:
                                 // Make new
