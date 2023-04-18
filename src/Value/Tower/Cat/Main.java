@@ -4,16 +4,46 @@ package Value.Tower.Cat;
 // and gives surface area/$
 // Shapes subclasses are cuboid, cylinder, flat rectangle, flat ellipse, semi-sphere
 
+/* Proposed Changes -
+ * - Ask for cost and compute value
+ * - Refactor with more concise menu (String array w/ options)
+ * - Unit conversion for different units of measurement
+ * - Error handling
+ * - Testing
+ * - GUI
+ */
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
+        int price = 0;
         double totalArea = 0; // Global variable to hold total area computed
-        double price = 0;
-        int choice, choice2, choice3, choice4, choice5, choice6;
+        // String input line for $ amount, so "$" is right before the input
+        String input;
+        int choice, choice2, choice3;
         Scanner scan = new Scanner(System.in);
         boolean ext = true, ext2 = true, ext3 = true;
+
+        // Welcome message
+        System.out.print("\n*** Welcome to CatTowerValue! ***\n" +
+                "This program takes the dimensions of your cat tower\n" +
+                "AND computes its total value in (currency)/(unit of measurement)!\n\n" +
+                "First off, how much did it cost? $");
+        // Acquiring price variable value
+        input = scan.next();
+        if (Utils.isInteger(input)) {
+            price = Integer.parseInt(input);
+        } else if (Utils.isDouble(input)) {
+            price = (int) Double.parseDouble(input);
+        }
+        System.out.println("\nWOW! You must be rich. \n" +
+                "Your cat's HOUSE cost $" + price + "!\n" +
+                "Try to be more responsible with your money...\n" +
+
+                "Now, onto the menu.\n");
+
         do {
             // Main menu
             System.out.println("Menu Options:");
@@ -63,7 +93,11 @@ public class Main {
                                             break;
                                         case 2:
                                             // Send to results screen
-                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            /*
+                                             * System.out.println("Total area of the cat tower is: " + totalArea);
+                                             * System.out.println("How much did it cost?: $");
+                                             */
+                                            Scanner scan4 = new Scanner(System.in);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -151,7 +185,7 @@ public class Main {
                                 FlatEllipse flatE = new FlatEllipse();
                                 System.out.println("Enter major axis: ");
                                 flatE.setMajorAxis(scan2.nextDouble());
-                                System.out.println("Enter width: ");
+                                System.out.println("Enter minor axis: ");
                                 flatE.setMinorAxis(scan2.nextDouble());
                                 System.out.println(
                                         "The usable surface area provided by this flat ellipse is: " + flatE.getArea());
@@ -253,8 +287,14 @@ public class Main {
                                 break;
                             case 7:
                                 // Results page
-                                System.out.println("What did this cat tower cost?");
-                                price = scan2.nextDouble();
+                                System.out.println("What did this cat tower cost? $");
+                                // price = scan2.nextDouble();
+                                input = scan.nextLine();
+                                if (Utils.isInteger(input)) {
+                                    price = Integer.parseInt(input);
+                                } else if (Utils.isDouble(input)) {
+                                    price = (int) Double.parseDouble(input);
+                                }
                                 System.out.println("Total area: " + totalArea);
                                 System.out.println("Price: " + price);
                                 System.out.println("Price per square inch is: " + (price / totalArea));
@@ -271,5 +311,6 @@ public class Main {
                     } while (choice2 != 7 && ext2);
             }
         } while (choice != 3 && ext);
+        scan.close();
     }
 }
