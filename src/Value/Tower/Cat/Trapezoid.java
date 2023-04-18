@@ -1,3 +1,4 @@
+package Value.Tower.Cat;
 public class Trapezoid extends Shape{
     double baseLength1;
     double baseLength2;

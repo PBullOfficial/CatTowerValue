@@ -1,3 +1,4 @@
+package Value.Tower.Cat;
 // Child class for Flat Rectangles
 // Controls flat rectangle calculation
 // Rectangular platforms

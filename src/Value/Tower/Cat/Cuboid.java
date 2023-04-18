@@ -1,3 +1,4 @@
+package Value.Tower.Cat;
 // Child class for Cuboids
 // Controls box area calculation
 // Hut

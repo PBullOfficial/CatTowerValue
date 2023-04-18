@@ -1,3 +1,4 @@
+package Value.Tower.Cat;
 // This class will be used for the final area calculation
 // Can use conditionals to see which shapes were created
 // Add up existing shapes' areas for total area!

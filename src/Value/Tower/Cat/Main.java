@@ -1,4 +1,6 @@
+package Value.Tower.Cat;
 // This program calculates the usable surface area for cat towers
+
 // and gives surface area/$
 // Shapes subclasses are cuboid, cylinder, flat rectangle, flat ellipse, semi-sphere
 
@@ -60,7 +62,7 @@ public class Main {
                                             ext3 = false;
                                             break;
                                         case 2:
-                                            //Send to results screen
+                                            // Send to results screen
                                             System.out.println("Total area of the cat tower is: " + totalArea);
                                             choice3 = 1;
                                             ext3 = false;
@@ -97,7 +99,7 @@ public class Main {
                                             ext3 = false;
                                             break;
                                         case 2:
-                                            //Send to results screen
+                                            // Send to results screen
                                             System.out.println("Total area of the cat tower is: " + totalArea);
                                             choice3 = 1;
                                             ext3 = false;
@@ -115,7 +117,8 @@ public class Main {
                                 flat.setLength(scan2.nextDouble());
                                 System.out.println("Enter width: ");
                                 flat.setWidth(scan2.nextDouble());
-                                System.out.println("The usable surface area provided by this flat rectangle is: " + flat.getArea());
+                                System.out.println("The usable surface area provided by this flat rectangle is: "
+                                        + flat.getArea());
                                 totalArea += flat.getArea();
                                 System.out.println("Total usable area so far is: " + totalArea);
                                 scan3 = new Scanner(System.in);
@@ -132,7 +135,7 @@ public class Main {
                                             ext3 = false;
                                             break;
                                         case 2:
-                                            //Send to results screen
+                                            // Send to results screen
                                             System.out.println("Total area of the cat tower is: " + totalArea);
                                             choice3 = 1;
                                             ext3 = false;
@@ -150,7 +153,8 @@ public class Main {
                                 flatE.setMajorAxis(scan2.nextDouble());
                                 System.out.println("Enter width: ");
                                 flatE.setMinorAxis(scan2.nextDouble());
-                                System.out.println("The usable surface area provided by this flat ellipse is: " + flatE.getArea());
+                                System.out.println(
+                                        "The usable surface area provided by this flat ellipse is: " + flatE.getArea());
                                 totalArea += flatE.getArea();
                                 System.out.println("Total usable area so far is: " + totalArea);
                                 scan3 = new Scanner(System.in);
@@ -167,7 +171,7 @@ public class Main {
                                             ext3 = false;
                                             break;
                                         case 2:
-                                            //Send to results screen
+                                            // Send to results screen
                                             System.out.println("Total area of the cat tower is: " + totalArea);
                                             choice3 = 1;
                                             ext3 = false;
@@ -200,7 +204,7 @@ public class Main {
                                             ext3 = false;
                                             break;
                                         case 2:
-                                            //Send to results screen
+                                            // Send to results screen
                                             System.out.println("Total area of the cat tower is: " + totalArea);
                                             choice3 = 1;
                                             ext3 = false;
@@ -236,7 +240,7 @@ public class Main {
                                             ext3 = false;
                                             break;
                                         case 2:
-                                            //Send to results screen
+                                            // Send to results screen
                                             System.out.println("Total area of the cat tower is: " + totalArea);
                                             choice3 = 1;
                                             ext3 = false;
@@ -253,7 +257,7 @@ public class Main {
                                 price = scan2.nextDouble();
                                 System.out.println("Total area: " + totalArea);
                                 System.out.println("Price: " + price);
-                                System.out.println("Price per square inch is: " + (price/totalArea));
+                                System.out.println("Price per square inch is: " + (price / totalArea));
                                 break;
                             case 8:
                                 System.exit(0);

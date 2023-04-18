@@ -1,3 +1,4 @@
+package Value.Tower.Cat;
 public class FlatEllipse extends Shape{
     double majorAxis;
     double minorAxis;

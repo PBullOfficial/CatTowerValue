@@ -1,3 +1,4 @@
+package Value.Tower.Cat;
 
 // A hammock has the same calculation as an inverted semi-sphere
 public class Hammock extends Shape {
