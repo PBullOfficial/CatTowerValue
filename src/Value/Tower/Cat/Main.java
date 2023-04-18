@@ -80,6 +80,7 @@ public class Main {
                                 cube.setHeight(scan2.nextDouble());
                                 System.out.printf("The area of this cuboid is: %.2f%n", cube.getArea());
                                 totalArea += cube.getArea();
+                                // Display totalArea so far
                                 Utils.displayAreaCont(totalArea);
                                 Scanner scan3 = new Scanner(System.in);
                                 do {
@@ -132,7 +133,7 @@ public class Main {
                                             break;
                                         case 2:
                                             // Send to results screen
-                                            Utils.displayArea(totalArea);
+                                            Utils.displayResults(totalArea, price);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -168,7 +169,7 @@ public class Main {
                                             break;
                                         case 2:
                                             // Send to results screen
-                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            Utils.displayResults(totalArea, price);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -204,7 +205,7 @@ public class Main {
                                             break;
                                         case 2:
                                             // Send to results screen
-                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            Utils.displayResults(totalArea, price);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -237,7 +238,7 @@ public class Main {
                                             break;
                                         case 2:
                                             // Send to results screen
-                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            Utils.displayResults(totalArea, price);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -273,7 +274,7 @@ public class Main {
                                             break;
                                         case 2:
                                             // Send to results screen
-                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            Utils.displayResults(totalArea, price);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -284,11 +285,8 @@ public class Main {
                                 } while (choice3 != 1 && ext3);
                                 break;
                             case 7:
-                                // Results page
-                                System.out.println("\n**Results**");
-                                System.out.println("Total area: " + totalArea);
-                                System.out.println("Price: $" + price);
-                                System.out.printf("Price per square inch is: $%.2f%n" , (price / totalArea));
+                                // Results page from shape menu
+                                Utils.displayResults(totalArea, price);
                                 break;
                             case 8:
                                 System.exit(0);
