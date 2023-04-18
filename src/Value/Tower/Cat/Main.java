@@ -38,12 +38,14 @@ public class Main {
         } else if (Utils.isDouble(input)) {
             price = (int) Double.parseDouble(input);
         }
+        // Welcome message 2
         System.out.println("\nWOW! You must be rich. \n" +
                 "Your cat's HOUSE cost $" + price + "!\n" +
                 "Try to be more responsible with your money...\n" +
 
                 "Now, onto the menu.\n");
 
+        // Start of menu loop and main functionality
         do {
             // Main menu
             System.out.println("Menu Options:");
@@ -76,9 +78,9 @@ public class Main {
                                 cube.setWidth(scan2.nextDouble());
                                 System.out.println("Enter height: ");
                                 cube.setHeight(scan2.nextDouble());
-                                System.out.println("The area of this cuboid is: " + cube.getArea());
+                                System.out.printf("The area of this cuboid is: %.2f%n", cube.getArea());
                                 totalArea += cube.getArea();
-                                System.out.println("The total area so far is: " + totalArea);
+                                Utils.displayAreaCont(totalArea);
                                 Scanner scan3 = new Scanner(System.in);
                                 do {
                                     System.out.println("Another shape?");
@@ -93,11 +95,7 @@ public class Main {
                                             break;
                                         case 2:
                                             // Send to results screen
-                                            /*
-                                             * System.out.println("Total area of the cat tower is: " + totalArea);
-                                             * System.out.println("How much did it cost?: $");
-                                             */
-                                            Scanner scan4 = new Scanner(System.in);
+                                            Utils.displayResults(totalArea, price);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -134,7 +132,7 @@ public class Main {
                                             break;
                                         case 2:
                                             // Send to results screen
-                                            System.out.println("Total area of the cat tower is: " + totalArea);
+                                            Utils.displayArea(totalArea);
                                             choice3 = 1;
                                             ext3 = false;
                                             ext2 = false;
@@ -287,17 +285,10 @@ public class Main {
                                 break;
                             case 7:
                                 // Results page
-                                System.out.println("What did this cat tower cost? $");
-                                // price = scan2.nextDouble();
-                                input = scan.nextLine();
-                                if (Utils.isInteger(input)) {
-                                    price = Integer.parseInt(input);
-                                } else if (Utils.isDouble(input)) {
-                                    price = (int) Double.parseDouble(input);
-                                }
+                                System.out.println("\n**Results**");
                                 System.out.println("Total area: " + totalArea);
-                                System.out.println("Price: " + price);
-                                System.out.println("Price per square inch is: " + (price / totalArea));
+                                System.out.println("Price: $" + price);
+                                System.out.printf("Price per square inch is: $%.2f%n" , (price / totalArea));
                                 break;
                             case 8:
                                 System.exit(0);
