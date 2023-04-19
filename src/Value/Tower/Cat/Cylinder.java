@@ -3,13 +3,14 @@ package Value.Tower.Cat;
 // Controls cylinder area calculation
 // Post
 public class Cylinder extends Shape{
+    protected String name = "name";
     double radius;
-    double area;
+
     // Default constructor
     public Cylinder() {
-
     }
 
+    // Constructor with parameters
     public Cylinder(double radius, double height) {
         this.radius = radius;
         this.height = height;
@@ -21,12 +22,19 @@ public class Cylinder extends Shape{
         it makes the top of the other piece (in the shape
         of the bottom of the cylinder) unusable.
         Reduces demand on user input. */
-    public double getArea() {
+    @Override
+    double getArea() {
         area = (2 * pi * radius * (height + radius)) - (3 * pi * radius * radius);
         return area;
     }
 
-    // Setter function for radius
+    // Getter getName() inherited and overwritten from Shape
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    // Setter functions
     public void setRadius(double theRadius) {
         radius = theRadius;
     }
@@ -34,7 +42,4 @@ public class Cylinder extends Shape{
     public void setHeight(double theHeight) {
         this.height = theHeight;
     }
-
-
-
 }

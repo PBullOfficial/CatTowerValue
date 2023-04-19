@@ -40,7 +40,7 @@ public class Main {
         }
         // Welcome message 2
         System.out.println("\nWOW! You must be rich. \n" +
-                "Your cat's HOUSE cost $" + price + "!\n" +
+                "The cat's house cost $" + price + "!\n" +
                 "Try to be more responsible with your money...\n" +
 
                 "Now, onto the menu.\n");
@@ -72,14 +72,16 @@ public class Main {
                             case 1:
                                 // Cuboid submenu
                                 Cuboid cube = new Cuboid();
+                                // Prompt for user input of dimensions (dims)
                                 System.out.println("Enter length: ");
                                 cube.setLength(scan2.nextDouble());
                                 System.out.println("Enter width: ");
                                 cube.setWidth(scan2.nextDouble());
                                 System.out.println("Enter height: ");
                                 cube.setHeight(scan2.nextDouble());
-                                // System.out.printf("The area of this cuboid is: %.2f%n", cube.getArea());
+                                // Calculate and display Cuboid instance area based on input dims
                                 cube.displayArea();
+                                // Add instance area to totalArea
                                 totalArea += cube.getArea();
                                 // Display totalArea to this point
                                 Utils.displayAreaCont(totalArea);
