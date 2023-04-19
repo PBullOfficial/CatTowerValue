@@ -78,9 +78,10 @@ public class Main {
                                 cube.setWidth(scan2.nextDouble());
                                 System.out.println("Enter height: ");
                                 cube.setHeight(scan2.nextDouble());
-                                System.out.printf("The area of this cuboid is: %.2f%n", cube.getArea());
+                                // System.out.printf("The area of this cuboid is: %.2f%n", cube.getArea());
+                                cube.displayArea();
                                 totalArea += cube.getArea();
-                                // Display totalArea so far
+                                // Display totalArea to this point
                                 Utils.displayAreaCont(totalArea);
                                 Scanner scan3 = new Scanner(System.in);
                                 do {
@@ -117,7 +118,8 @@ public class Main {
                                 System.out.println("**Note -- Cylinders take away surface area where they are placed,");
                                 System.out.println("therefore, the total contributed area may be negative.");
                                 totalArea += cyl.getArea();
-                                System.out.println("The total area so far is: " + totalArea);
+                                // Display totalArea to this point
+                                Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
                                     ext3 = true;
@@ -153,7 +155,8 @@ public class Main {
                                 System.out.println("The usable surface area provided by this flat rectangle is: "
                                         + flat.getArea());
                                 totalArea += flat.getArea();
-                                System.out.println("Total usable area so far is: " + totalArea);
+                                // Display totalArea to this point
+                                Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
                                     ext3 = true;
@@ -189,7 +192,8 @@ public class Main {
                                 System.out.println(
                                         "The usable surface area provided by this flat ellipse is: " + flatE.getArea());
                                 totalArea += flatE.getArea();
-                                System.out.println("Total usable area so far is: " + totalArea);
+                                // Display totalArea to this point
+                                Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
                                     ext3 = true;
@@ -222,7 +226,8 @@ public class Main {
                                 ham.setRadius(scan2.nextDouble());
                                 System.out.println("The surface area provided by this hammock is: " + ham.getArea());
                                 totalArea += ham.getArea();
-                                System.out.println("The total area so far is: " + totalArea);
+                                // Display totalArea to this point
+                                Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
                                     ext3 = true;
@@ -258,7 +263,8 @@ public class Main {
                                 trap.setBaseLength2(scan2.nextDouble());
                                 System.out.println("The surface area provided by this trapezoid is: " + trap.getArea());
                                 totalArea += trap.getArea();
-                                System.out.println("The total area so far is: " + totalArea);
+                                // Display totalArea to this point
+                                Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
                                     ext3 = true;

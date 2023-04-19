@@ -3,13 +3,22 @@ package Value.Tower.Cat;
 // Controls length, width, and height for all shape objects
 
 abstract class Shape {
+    protected String name = "Shape";
     protected double length;
     protected double width;
     protected double height;
     protected double area;
     static protected double pi = Math.PI;
 
+    // Default Constructor
+    public Shape() {
+    }
+
     // Setter and Getter functions
+    public String getName() {
+        return name;
+    }
+
     void setLength(double theLength) {
         this.length = theLength;
     }
@@ -53,11 +62,15 @@ abstract class Shape {
         return area;
     }
 
-    //Will be used for Main simplification later
+/*  // To be used for Main simplification later
     void shapeMenu() {
 
-    }
+    } */
 
+    // Generic method to display totalArea for any shape
+    <T> void displayArea() {
+        System.out.printf("The total area of this " + getName() + " is: %.2f%n", getArea());
+    }
 
 }
 
