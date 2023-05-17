@@ -1,6 +1,6 @@
 package Value.Tower.Cat;
 public class FlatEllipse extends Shape{
-    protected String name = "FlatEllipse";
+    protected String name = "Flat Ellipse";
 
 
     public FlatEllipse() {

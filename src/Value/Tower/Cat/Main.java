@@ -225,7 +225,7 @@ public class Main {
                                 Hammock ham = new Hammock();
                                 System.out.println("Enter radius: ");
                                 ham.setRadius(scan2.nextDouble());
-                                System.out.println("The surface area provided by this hammock is: " + ham.getArea());
+                                ham.displayArea();
                                 totalArea += ham.getArea();
                                 // Display totalArea to this point
                                 Utils.displayAreaCont(totalArea);

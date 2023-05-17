@@ -3,7 +3,6 @@ package Value.Tower.Cat;
 // A hammock has the same calculation as an inverted semi-sphere
 public class Hammock extends Shape {
     protected String name = "Hammock";
-    double radius;
 
     public Hammock() {
     }
@@ -12,14 +11,22 @@ public class Hammock extends Shape {
         this.radius = radius;
     }
 
+    // Usable area for hammocks
     @Override
     double getArea() {
         area = 2 * pi * pi;
         return area;
     }
 
+    // Setter and Getter functions
+    @Override
     public void setRadius(double theRadius) {
-        radius = theRadius;
+        this.radius = theRadius;
+    }
+
+    @Override
+    public double getRadius() {
+        return this.radius;
     }
     
     // Getter getName() inherited and overwritten from Shape
