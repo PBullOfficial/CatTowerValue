@@ -3,8 +3,8 @@ package Value.Tower.Cat;
 // Controls cylinder area calculation
 // Post
 public class Cylinder extends Shape{
-    protected String name = "name";
-    double radius;
+    protected String name = "Cylinder";
+
 
     // Default constructor
     public Cylinder() {
@@ -36,7 +36,7 @@ public class Cylinder extends Shape{
 
     // Setter functions
     public void setRadius(double theRadius) {
-        radius = theRadius;
+        this.radius = theRadius;
     }
 
     public void setHeight(double theHeight) {

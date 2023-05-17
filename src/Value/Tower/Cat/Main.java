@@ -116,9 +116,9 @@ public class Main {
                                 cyl.setHeight(scan2.nextDouble());
                                 System.out.println("Enter radius: ");
                                 cyl.setRadius(scan2.nextDouble());
-                                System.out.println("The surface area provided by this cylinder is: " + cyl.getArea());
-                                System.out.println("**Note -- Cylinders take away surface area where they are placed,");
-                                System.out.println("therefore, the total contributed area may be negative.");
+                                cyl.displayArea();
+                                System.out.println("**Note -- Cylinders can take away useable area from the surface on which they are standing.");
+                                System.out.println("As a result, the total useable area may be negative.");
                                 totalArea += cyl.getArea();
                                 // Display totalArea to this point
                                 Utils.displayAreaCont(totalArea);

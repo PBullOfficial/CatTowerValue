@@ -8,6 +8,7 @@ abstract class Shape {
     protected double width;
     protected double height;
     protected double area;
+    protected double radius;
     static protected double pi = Math.PI;
 
     // Default Constructor
