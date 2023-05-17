@@ -191,8 +191,7 @@ public class Main {
                                 flatE.setMajorAxis(scan2.nextDouble());
                                 System.out.println("Enter minor axis: ");
                                 flatE.setMinorAxis(scan2.nextDouble());
-                                System.out.println(
-                                        "The usable surface area provided by this flat ellipse is: " + flatE.getArea());
+                                flatE.displayArea();
                                 totalArea += flatE.getArea();
                                 // Display totalArea to this point
                                 Utils.displayAreaCont(totalArea);

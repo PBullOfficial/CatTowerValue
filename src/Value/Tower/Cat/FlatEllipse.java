@@ -1,8 +1,7 @@
 package Value.Tower.Cat;
 public class FlatEllipse extends Shape{
     protected String name = "FlatEllipse";
-    double majorAxis;
-    double minorAxis;
+
 
     public FlatEllipse() {
     }
@@ -25,11 +24,24 @@ public class FlatEllipse extends Shape{
         return this.name;
     }
 
+    // Setter and Getter functions
+    @Override
     public void setMajorAxis(double majorAxis) {
         this.majorAxis = majorAxis;
     }
 
+    @Override
     public void setMinorAxis(double minorAxis) {
+        this.minorAxis = minorAxis;
+    }
+
+    @Override
+    public void getMajorAxis(double majorAxis) {
+        this.majorAxis = majorAxis;
+    }
+
+    @Override
+    public void getMinorAxis(double minorAxis) {
         this.minorAxis = minorAxis;
     }
 }

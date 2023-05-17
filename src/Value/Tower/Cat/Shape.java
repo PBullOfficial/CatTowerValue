@@ -9,6 +9,8 @@ abstract class Shape {
     protected double height;
     protected double area;
     protected double radius;
+    protected double majorAxis;
+    protected double minorAxis;
     static protected double pi = Math.PI;
 
     // Default Constructor
@@ -47,12 +49,26 @@ abstract class Shape {
     void setRadius(double theRadius) {
         this.radius = theRadius;
     }
-    
+
     double getRadius() {
         return this.radius;
     }
 
+    public void setMajorAxis(double majorAxis) {
+        this.majorAxis = majorAxis;
+    }
 
+    public void setMinorAxis(double minorAxis) {
+        this.minorAxis = minorAxis;
+    }
+
+    public void getMajorAxis(double majorAxis) {
+        this.majorAxis = majorAxis;
+    }
+
+    public void getMinorAxis(double minorAxis) {
+        this.minorAxis = minorAxis;
+    }
 
     protected void cutOutHoles(String shape) {
         switch (shape) {
