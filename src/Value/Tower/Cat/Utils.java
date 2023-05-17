@@ -24,7 +24,7 @@ class Utils {
         if (price instanceof Double) {
             double doublePrice = price.doubleValue();
             System.out.println("\n**Results**");
-            System.out.println("Total area: " + totalArea);
+            System.out.printf("Total area: %.2f%n", (totalArea));
             System.out.println("Price: $" + price);
             System.out.printf("Price per square inch is: $%.2f%n", (doublePrice / totalArea));
         } else if (price instanceof Integer) {
