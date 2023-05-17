@@ -44,6 +44,16 @@ abstract class Shape {
         return this.height;
     }
 
+    void setRadius(double theRadius) {
+        this.radius = theRadius;
+    }
+    
+    double getRadius() {
+        return this.radius;
+    }
+
+
+
     protected void cutOutHoles(String shape) {
         switch (shape) {
             case "circle":

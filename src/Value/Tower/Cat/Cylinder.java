@@ -34,11 +34,18 @@ public class Cylinder extends Shape{
         return this.name;
     }
 
-    // Setter functions
+    // Setter and Getter functions
+    @Override
     public void setRadius(double theRadius) {
         this.radius = theRadius;
     }
 
+    @Override
+    public double getRadius() {
+        return this.radius;
+    }
+
+    @Override
     public void setHeight(double theHeight) {
         this.height = theHeight;
     }
