@@ -1,10 +1,11 @@
 package Value.Tower.Cat;
 
 class Utils {
+    // Returns true if string is in integer format
     static boolean isInteger(String str) {
         return str.matches("^-?\\d+$");
     }
-
+    // Returns true if string is in double format
     static boolean isDouble(String str) {
         return str.matches("^-?\\d+\\.\\d+$");
     }
@@ -24,13 +25,13 @@ class Utils {
         if (price instanceof Double) {
             double doublePrice = price.doubleValue();
             System.out.println("\n**Results**");
-            System.out.printf("Total area: %.2f%n", (totalArea));
-            System.out.println("Price: $" + price);
+            System.out.printf("Total area: %.2f%n", totalArea);
+            System.out.printf("Price: $ %.2f%n", price);
             System.out.printf("Price per square inch is: $%.2f%n", (doublePrice / totalArea));
         } else if (price instanceof Integer) {
             int intPrice = price.intValue();
             System.out.println("\n**Results**");
-            System.out.println("Total area: " + totalArea);
+            System.out.printf("Total area: %.2f%n", totalArea);
             System.out.println("Price: $" + price);
             System.out.printf("Price per square inch is: $%.2f%n", (intPrice / totalArea));
         }

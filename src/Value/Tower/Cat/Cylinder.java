@@ -5,7 +5,6 @@ package Value.Tower.Cat;
 public class Cylinder extends Shape{
     protected String name = "Cylinder";
 
-
     // Default constructor
     public Cylinder() {
     }

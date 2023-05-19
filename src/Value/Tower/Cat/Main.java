@@ -5,7 +5,6 @@ package Value.Tower.Cat;
 // Shapes subclasses are cuboid, cylinder, flat rectangle, flat ellipse, semi-sphere
 
 /* Proposed Changes -
- * - Ask for cost and compute value
  * - Refactor with more concise menu (String array w/ options)
  * - Unit conversion for different units of measurement
  * - Error handling
@@ -18,7 +17,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int price = 0;
+        double price = 0;
         double totalArea = 0; // Global variable to hold total area computed
         // String input line for $ amount, so "$" is right before the input
         String input;
@@ -31,19 +30,31 @@ public class Main {
                 "This program takes the dimensions of your cat tower\n" +
                 "AND computes its total value in (currency)/(unit of measurement)!\n\n" +
                 "First off, how much did it cost? $");
-        // Acquiring price variable value
-        input = scan.next();
-        if (Utils.isInteger(input)) {
-            price = Integer.parseInt(input);
-        } else if (Utils.isDouble(input)) {
-            price = (int) Double.parseDouble(input);
+        
+        // Loop to check if price input string is a number
+        boolean tryAgain = true;
+        while(tryAgain) {
+            // Acquiring price variable value
+            input = scan.next();
+            // If price is a double string, parse it to an double
+            // If price is an integer string, parse it to an integer and then cast to a double
+            if (Utils.isDouble(input)) {
+                price = Double.parseDouble(input);
+                tryAgain = false;
+            } else if (Utils.isInteger(input)) {
+                price = (double) Integer.parseInt(input);
+                tryAgain = false;
+            } else {
+                System.out.println("Try again. Enter a number.");
+            }
         }
         // Welcome message 2
-        System.out.println("\nWOW! You must be rich. \n" +
-                "The cat's house cost $" + price + "!\n" +
-                "Try to be more responsible with your money...\n" +
-
-                "Now, onto the menu.\n");
+        System.out.println("\nWOW!");
+        System.out.print("The cat's house cost $");
+        System.out.printf("%.2f%n", price);
+        System.out.println("\n...\n");
+        System.out.println("Try to be more responsible with your money...\n");
+        System.out.println("Now, onto the menu.\n");
 
         // Start of menu loop and main functionality
         do {
