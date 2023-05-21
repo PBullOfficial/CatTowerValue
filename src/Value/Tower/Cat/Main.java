@@ -51,9 +51,9 @@ public class Main {
         // Welcome message 2
         System.out.println("\nWOW!");
         System.out.print("The cat's house cost $");
-        System.out.printf("%.2f%n", price);
-        System.out.println("\n...\n");
-        System.out.println("Try to be more responsible with your money...\n");
+        System.out.printf("%.2f!", price);
+        System.out.println("\n...");
+        System.out.println("Try to be more responsible with your money.");
         System.out.println("Now, onto the menu.\n");
 
         // Start of menu loop and main functionality
@@ -66,6 +66,9 @@ public class Main {
             choice = scan.nextInt();
             switch (choice) {
                 case 1:
+                    // New cat tower
+                    // Reset totalArea to 0
+                    totalArea = 0;
                     // Shape submenu
                     Scanner scan2 = new Scanner(System.in);
                     do {
