@@ -27,9 +27,10 @@ public class Main {
 
         // Welcome message
         System.out.print("\n*** Welcome to CatTowerValue! ***\n" +
-                "This program takes the dimensions of your cat tower\n" +
-                "AND computes its total value in (currency)/(unit of measurement)!\n\n" +
-                "First off, how much did it cost? $");
+                "This program takes the price and dimensions of a cat tower\n" +
+                "and computes its value per square inch.\n\n");
+
+        System.out.print("Let's begin. How much did it cost? $");
         
         // Loop to check if price input string is a number
         boolean tryAgain = true;
@@ -49,11 +50,9 @@ public class Main {
             }
         }
         // Welcome message 2
-        System.out.println("\nWOW!");
-        System.out.print("The cat's house cost $");
+        System.out.print("\nWOW! This cat tower costs $");
         System.out.printf("%.2f!", price);
         System.out.println("\n...");
-        System.out.println("Try to be more responsible with your money.");
         System.out.println("Now, onto the menu.\n");
 
         // Start of menu loop and main functionality
