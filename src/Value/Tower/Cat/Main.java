@@ -29,31 +29,6 @@ public class Main {
                 "This program takes the price and dimensions of a cat tower\n" +
                 "and computes its value per square inch.\n\n");
 
-        System.out.print("Let's begin. How much did it cost? $");
-        
-        // Loop to check if price input string is a number
-        boolean tryAgain = true;
-        while(tryAgain) {
-            // Acquiring price variable value
-            input = scan.next();
-            // If price is a double string, parse it to an double
-            // If price is an integer string, parse it to an integer and then cast to a double
-            if (Utils.isDouble(input)) {
-                price = Double.parseDouble(input);
-                tryAgain = false;
-            } else if (Utils.isInteger(input)) {
-                price = (double) Integer.parseInt(input);
-                tryAgain = false;
-            } else {
-                System.out.println("Try again. Enter a number.");
-            }
-        }
-        // Welcome message 2
-        System.out.print("\nWOW! This cat tower costs $");
-        System.out.printf("%.2f!", price);
-        System.out.println("\n...");
-        System.out.println("Now, onto the menu.\n");
-
         // Start of menu loop and main functionality
         do {
             // Main menu
@@ -62,8 +37,32 @@ public class Main {
             switch (choice) {
                 case 1:
                     // New cat tower
-                    // Reset totalArea to 0
                     totalArea = 0;
+                    price = 0;
+                    System.out.print("\nLet's begin. How much did it cost? $");
+                
+                    // Loop to check if price input string is a number
+                    boolean tryAgain = true;
+                    while(tryAgain) {
+                        // Acquiring price variable value
+                        input = scan.next();
+                        // If price is a double string, parse it to an double
+                        // If price is an integer string, parse it to an integer and then cast to a double
+                        if (Utils.isDouble(input)) {
+                            price = Double.parseDouble(input);
+                            tryAgain = false;
+                        } else if (Utils.isInteger(input)) {
+                            price = (double) Integer.parseInt(input);
+                            tryAgain = false;
+                        } else {
+                            System.out.println("Try again. Enter a number.");
+                        }
+                    }
+                    // Welcome message 2
+                    System.out.print("\nWOW! This cat tower cost $");
+                    System.out.printf("%.2f!", price);
+                    System.out.println("\nAdd some shapes, compute, or exit.");
+
                     // Shape submenu
                     Scanner scan2 = new Scanner(System.in);
                     do {
