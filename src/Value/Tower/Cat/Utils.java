@@ -38,4 +38,31 @@ class Utils {
         
     }
 
+    // Main menu
+    public static void printMainMenu() {
+        System.out.println("Menu Options:");
+        System.out.println("(1) New cat tower");
+        System.out.println("(2) View previous cat tower");
+        System.out.println("(3) Quit");
+    }
+
+    // Shape menu
+    public static void printShapeMenu() {
+        System.out.println("Shape Options: ");
+        System.out.println("(1) Cuboid");
+        System.out.println("(2) Cylinder");
+        System.out.println("(3) Flat Rectangle");
+        System.out.println("(4) Flat Ellipse");
+        System.out.println("(5) Hammock");
+        System.out.println("(6) Trapezoid");
+        System.out.println("(7) Compute!");
+        System.out.println("(8) Exit");
+    }
+
+    public static void printAnotherShapeMenu() {
+        System.out.println("Another shape?");
+        System.out.println("(1) Yes");
+        System.out.println("(2) No - Compute!");
+    }
+
 }

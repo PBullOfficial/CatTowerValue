@@ -23,7 +23,6 @@ public class Main {
         String input;
         int choice, choice2, choice3;
         Scanner scan = new Scanner(System.in);
-        boolean ext = true, ext2 = true, ext3 = true;
 
         // Welcome message
         System.out.print("\n*** Welcome to CatTowerValue! ***\n" +
@@ -58,10 +57,7 @@ public class Main {
         // Start of menu loop and main functionality
         do {
             // Main menu
-            System.out.println("Menu Options:");
-            System.out.println("(1) New cat tower");
-            System.out.println("(2) View previous cat tower");
-            System.out.println("(3) Quit");
+            Utils.printMainMenu();
             choice = scan.nextInt();
             switch (choice) {
                 case 1:
@@ -71,15 +67,7 @@ public class Main {
                     // Shape submenu
                     Scanner scan2 = new Scanner(System.in);
                     do {
-                        System.out.println("Shape Options: ");
-                        System.out.println("(1) Cuboid");
-                        System.out.println("(2) Cylinder");
-                        System.out.println("(3) Flat Rectangle");
-                        System.out.println("(4) Flat Ellipse");
-                        System.out.println("(5) Hammock");
-                        System.out.println("(6) Trapezoid");
-                        System.out.println("(7) Compute!");
-                        System.out.println("(8) Exit");
+                        Utils.printShapeMenu();
                         choice2 = scan2.nextInt();
                         switch (choice2) {
                             case 1:
@@ -100,27 +88,22 @@ public class Main {
                                 Utils.displayAreaCont(totalArea);
                                 Scanner scan3 = new Scanner(System.in);
                                 do {
-                                    System.out.println("Another shape?");
-                                    System.out.println("(1) Yes");
-                                    System.out.println("(2) No - Compute!");
+                                    Utils.printAnotherShapeMenu();
                                     choice3 = scan3.nextInt();
                                     switch (choice3) {
                                         case 1:
                                             // Returns to previous menu
-                                            choice3 = 1;
-                                            ext3 = false;
                                             break;
                                         case 2:
                                             // Send to results screen
                                             Utils.displayResults(totalArea, price);
                                             choice3 = 1;
-                                            ext3 = false;
-                                            ext2 = false;
+                                            choice2 = 7;
                                             break;
                                         default:
                                             System.out.println("Invalid Selection");
                                     }
-                                } while (choice3 != 1 && ext3);
+                                } while (choice3 != 1);
                                 break;
                             case 2:
                                 // Cylinder submenu
@@ -137,28 +120,22 @@ public class Main {
                                 Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
-                                    ext3 = true;
-                                    System.out.println("Another shape?");
-                                    System.out.println("(1) Yes");
-                                    System.out.println("(2) No - Compute!");
+                                    Utils.printAnotherShapeMenu();
                                     choice3 = scan3.nextInt();
                                     switch (choice3) {
                                         case 1:
                                             // Returns to previous menu
-                                            choice3 = 1;
-                                            ext3 = false;
                                             break;
                                         case 2:
                                             // Send to results screen
                                             Utils.displayResults(totalArea, price);
                                             choice3 = 1;
-                                            ext3 = false;
-                                            ext2 = false;
+                                            choice2 = 7;
                                             break;
                                         default:
                                             System.out.println("Invalid Selection");
                                     }
-                                } while (choice3 != 1 && ext3);
+                                } while (choice3 != 1);
                                 break;
                             case 3:
                                 // Flat Rectangle submenu
@@ -174,28 +151,22 @@ public class Main {
                                 Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
-                                    ext3 = true;
-                                    System.out.println("Another shape?");
-                                    System.out.println("(1) Yes");
-                                    System.out.println("(2) No - Compute!");
+                                    Utils.printAnotherShapeMenu();
                                     choice3 = scan3.nextInt();
                                     switch (choice3) {
                                         case 1:
                                             // Returns to previous menu
-                                            choice3 = 1;
-                                            ext3 = false;
                                             break;
                                         case 2:
                                             // Send to results screen
                                             Utils.displayResults(totalArea, price);
                                             choice3 = 1;
-                                            ext3 = false;
-                                            ext2 = false;
+                                            choice2 = 7;
                                             break;
                                         default:
                                             System.out.println("Invalid Selection");
                                     }
-                                } while (choice3 != 1 && ext3);
+                                } while (choice3 != 1);
                                 break;
                             case 4:
                                 // Flat Ellipse submenu
@@ -210,28 +181,22 @@ public class Main {
                                 Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
-                                    ext3 = true;
-                                    System.out.println("Another shape?");
-                                    System.out.println("(1) Yes");
-                                    System.out.println("(2) No - Compute!");
+                                    Utils.printAnotherShapeMenu();
                                     choice3 = scan3.nextInt();
                                     switch (choice3) {
                                         case 1:
                                             // Returns to previous menu
-                                            choice3 = 1;
-                                            ext3 = false;
                                             break;
                                         case 2:
                                             // Send to results screen
                                             Utils.displayResults(totalArea, price);
                                             choice3 = 1;
-                                            ext3 = false;
-                                            ext2 = false;
+                                            choice2 = 7;
                                             break;
                                         default:
                                             System.out.println("Invalid Selection");
                                     }
-                                } while (choice3 != 1 && ext3);
+                                } while (choice3 != 1);
                                 break;
                             case 5:
                                 // Hammock submenu
@@ -244,28 +209,22 @@ public class Main {
                                 Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
-                                    ext3 = true;
-                                    System.out.println("Another shape?");
-                                    System.out.println("(1) Yes");
-                                    System.out.println("(2) No - Compute!");
+                                    Utils.printAnotherShapeMenu();
                                     choice3 = scan3.nextInt();
                                     switch (choice3) {
                                         case 1:
                                             // Returns to previous menu
-                                            choice3 = 1;
-                                            ext3 = false;
                                             break;
                                         case 2:
                                             // Send to results screen
                                             Utils.displayResults(totalArea, price);
                                             choice3 = 1;
-                                            ext3 = false;
-                                            ext2 = false;
+                                            choice2 = 7;
                                             break;
                                         default:
                                             System.out.println("Invalid Selection");
                                     }
-                                } while (choice3 != 1 && ext3);
+                                } while (choice3 != 1);
                                 break;
                             case 6:
                                 Trapezoid trap = new Trapezoid();
@@ -281,28 +240,22 @@ public class Main {
                                 Utils.displayAreaCont(totalArea);
                                 scan3 = new Scanner(System.in);
                                 do {
-                                    ext3 = true;
-                                    System.out.println("Another shape?");
-                                    System.out.println("(1) Yes");
-                                    System.out.println("(2) No - Compute!");
+                                    Utils.printAnotherShapeMenu();
                                     choice3 = scan3.nextInt();
                                     switch (choice3) {
                                         case 1:
                                             // Returns to previous menu
-                                            choice3 = 1;
-                                            ext3 = false;
                                             break;
                                         case 2:
                                             // Send to results screen
                                             Utils.displayResults(totalArea, price);
                                             choice3 = 1;
-                                            ext3 = false;
-                                            ext2 = false;
+                                            choice2 = 7;
                                             break;
                                         default:
                                             System.out.println("Invalid Selection");
                                     }
-                                } while (choice3 != 1 && ext3);
+                                } while (choice3 != 1);
                                 break;
                             case 7:
                                 // Results page from shape menu
@@ -310,16 +263,15 @@ public class Main {
                                 break;
                             case 8:
                                 System.exit(0);
-                                ext2 = false;
                                 break;
                             default:
                                 System.out.println("Invalid Selection");
                                 break;
                         }
 
-                    } while (choice2 != 7 && ext2);
+                    } while (choice2 != 7);
             }
-        } while (choice != 3 && ext);
+        } while (choice != 3);
         scan.close();
     }
 }
